@@ -1,0 +1,857 @@
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: SPI65                               Date: 12- 7-2019,  2:52AM
+Device Used: XC9572XL-7-VQ44
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+59 /72  ( 82%) 254 /360  ( 71%) 128/216 ( 59%)   48 /72  ( 67%) 28 /34  ( 82%)
+
+** Function Block Resources **
+
+Function    Mcells      FB Inps     Pterms      IO          
+Block       Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+FB1          16/18       39/54       77/90       5/ 9
+FB2          18/18*      37/54       76/90       9/ 9*
+FB3           8/18       13/54       29/90       7/ 9
+FB4          17/18       39/54       72/90       7/ 7*
+             -----       -----       -----      -----    
+             59/72      128/216     254/360     28/34 
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+Global clock net(s) unused.
+Global output enable net(s) unused.
+Global set/reset net(s) unused.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :   13          13    |  I/O              :    24      28
+Output        :    7           7    |  GCK/IO           :     1       3
+Bidirectional :    8           8    |  GTS/IO           :     2       2
+GCK           :    0           0    |  GSR/IO           :     1       1
+GTS           :    0           0    |
+GSR           :    0           0    |
+                 ----        ----
+        Total     28          28
+
+** Power Data **
+
+There are 59 macrocells in high performance mode (MCHP).
+There are 0 macrocells in low power mode (MCLP).
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'SPI65.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'cpu_Nres' based upon the LOC
+   constraint 'P44'. It is recommended that you declare this BUFG explicitedly
+   in your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+WARNING:Cpld:936 - The output buffer 'diag_OBUF' is missing an input and will be
+   deleted.
+WARNING:Cpld:1239 - The global clock designation (BUFG) on signal
+   'cpu_Nres_IBUF' is ignored. Most likely the signal is gated and therefore
+   cannot be used as a global control signal.
+*************************  Summary of Mapped Logic  ************************
+
+** 15 Outputs **
+
+Signal                                    Total Total Loc     Pin  Pin     Pin     Pwr  Slew Reg Init
+Name                                      Pts   Inps          No.  Type    Use     Mode Rate State
+cpu_Nirq                                  5     10    FB1_6   41   I/O     O       STD  FAST 
+cpu_d<5>                                  6     11    FB2_2   29   I/O     I/O     STD  FAST 
+cpu_d<4>                                  5     10    FB2_5   30   I/O     I/O     STD  FAST 
+cpu_d<3>                                  5     10    FB2_6   31   I/O     I/O     STD  FAST 
+cpu_d<2>                                  5     10    FB2_8   32   I/O     I/O     STD  FAST 
+cpu_d<1>                                  5     10    FB2_9   33   GSR/I/O I/O     STD  FAST 
+cpu_d<0>                                  5     10    FB2_11  34   GTS/I/O I/O     STD  FAST 
+spi_Nsel<0>                               4     8     FB3_15  14   I/O     O       STD  FAST RESET
+spi_Nsel<2>                               4     8     FB3_16  18   I/O     O       STD  FAST RESET
+spi_Nsel<1>                               4     8     FB3_17  16   I/O     O       STD  FAST RESET
+spi_Nsel<3>                               4     8     FB4_2   19   I/O     O       STD  FAST RESET
+spi_mosi                                  11    20    FB4_8   21   I/O     O       STD  FAST RESET
+spi_sclk                                  6     11    FB4_11  22   I/O     O       STD  FAST RESET
+cpu_d<7>                                  5     10    FB4_15  27   I/O     I/O     STD  FAST 
+cpu_d<6>                                  5     10    FB4_17  28   I/O     I/O     STD  FAST 
+
+** 44 Buried Nodes **
+
+Signal                                    Total Total Loc     Pwr  Reg Init
+Name                                      Pts   Inps          Mode State
+divcnt<3>                                 9     10    FB1_1   STD  RESET
+divcnt<3>/divcnt<3>_CLKF                  2     3     FB1_2   STD  
+spidataout<6>                             3     8     FB1_3   STD  RESET
+spidatain<6>                              4     9     FB1_4   STD  RESET
+spidatain<5>                              4     9     FB1_5   STD  RESET
+spidatain<4>                              4     9     FB1_7   STD  RESET
+spidatain<3>                              4     9     FB1_8   STD  RESET
+spidatain<2>                              4     9     FB1_9   STD  RESET
+spidatain<1>                              4     9     FB1_10  STD  RESET
+slaveinten<2>                             4     8     FB1_11  STD  RESET
+ier                                       4     8     FB1_12  STD  RESET
+divcnt<0>                                 7     10    FB1_13  STD  RESET
+shifting2                                 2     7     FB1_14  STD  RESET
+divcnt<1>                                 8     10    FB1_15  STD  RESET
+divcnt<2>                                 9     10    FB1_18  STD  RESET
+spidataout<2>                             3     8     FB2_1   STD  RESET
+spidataout<1>                             3     8     FB2_3   STD  RESET
+spidataout<0>                             3     8     FB2_4   STD  RESET
+start_shifting                            4     9     FB2_7   STD  RESET
+slaveinten<0>                             4     8     FB2_10  STD  RESET
+frx                                       4     8     FB2_12  STD  RESET
+ece                                       4     8     FB2_13  STD  RESET
+divisor<2>                                4     8     FB2_14  STD  RESET
+divisor<1>                                4     8     FB2_15  STD  RESET
+divisor<0>                                4     8     FB2_16  STD  RESET
+cpol                                      4     8     FB2_17  STD  RESET
+cpha                                      4     8     FB2_18  STD  RESET
+spidataout<7>                             3     8     FB3_11  STD  RESET
+spidataout<5>                             3     8     FB3_12  STD  RESET
+spidataout<4>                             3     8     FB3_13  STD  RESET
+slaveinten<3>                             4     8     FB3_14  STD  RESET
+slaveinten<1>                             4     8     FB3_18  STD  RESET
+start_shifting/start_shifting_RSTF__$INT  1     2     FB4_1   STD  
+tc                                        3     6     FB4_3   STD  RESET
+spidataout<3>                             3     8     FB4_4   STD  RESET
+shiftdone                                 3     10    FB4_5   STD  RESET
+shiftcnt<0>                               3     8     FB4_6   STD  RESET
+tmo                                       4     8     FB4_7   STD  RESET
+spidatain<7>                              4     9     FB4_10  STD  RESET
+spidatain<0>                              4     9     FB4_12  STD  RESET
+
+Signal                                    Total Total Loc     Pwr  Reg Init
+Name                                      Pts   Inps          Mode State
+shiftcnt<3>                               4     11    FB4_13  STD  RESET
+shiftcnt<2>                               4     10    FB4_14  STD  RESET
+shiftcnt<1>                               4     9     FB4_16  STD  RESET
+divisor<3>                                4     8     FB4_18  STD  RESET
+
+** 13 Inputs **
+
+Signal                                    Loc     Pin  Pin     Pin     
+Name                                              No.  Type    Use     
+cs1                                       FB1_2   39   I/O     I
+Ncs2                                      FB1_5   40   I/O     I
+extclk                                    FB1_8   42   I/O     I
+cpu_Nres                                  FB1_11  44   GCK/I/O I
+cpu_rnw                                   FB2_14  36   GTS/I/O I
+cpu_a<1>                                  FB2_15  37   I/O     I
+cpu_a<0>                                  FB2_17  38   I/O     I
+spi_int<0>                                FB3_8   7    I/O     I
+spi_int<1>                                FB3_9   8    I/O     I
+spi_int<2>                                FB3_11  12   I/O     I
+spi_int<3>                                FB3_14  13   I/O     I
+spi_miso                                  FB4_5   20   I/O     I
+cpu_phi2                                  FB4_14  23   I/O     I
+
+Legend:
+Pin No. - ~ - User Assigned
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Imp Pt       - Product terms imported from other macrocells
+Exp Pt       - Product terms exported to other macrocells
+               in direction shown
+Unused Pt    - Unused local product terms remaining in macrocell
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global Clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+X            - Signal used as input to the macrocell logic.
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+divcnt<3>             9       4<-   0   0     FB1_1         (b)     (b)
+divcnt<3>/divcnt<3>_CLKF
+                      2       1<- /\4   0     FB1_2   39    I/O     I
+spidataout<6>         3       0   /\1   1     FB1_3         (b)     (b)
+spidatain<6>          4       0     0   1     FB1_4         (b)     (b)
+spidatain<5>          4       0     0   1     FB1_5   40    I/O     I
+cpu_Nirq              5       0     0   0     FB1_6   41    I/O     O
+spidatain<4>          4       0     0   1     FB1_7         (b)     (b)
+spidatain<3>          4       0     0   1     FB1_8   42    I/O     I
+spidatain<2>          4       0     0   1     FB1_9   43    GCK/I/O (b)
+spidatain<1>          4       0     0   1     FB1_10        (b)     (b)
+slaveinten<2>         4       0     0   1     FB1_11  44    GCK/I/O I
+ier                   4       0   \/1   0     FB1_12        (b)     (b)
+divcnt<0>             7       2<-   0   0     FB1_13        (b)     (b)
+shifting2             2       0   /\1   2     FB1_14  1     GCK/I/O (b)
+divcnt<1>             8       3<-   0   0     FB1_15  2     I/O     (b)
+(unused)              0       0   /\3   2     FB1_16        (b)     (b)
+(unused)              0       0   \/4   1     FB1_17  3     I/O     (b)
+divcnt<2>             9       4<-   0   0     FB1_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: cpu_d<6>.PIN              14: divisor<0>        27: slaveinten<3> 
+  2: Ncs2                      15: divisor<1>        28: spi_int<0> 
+  3: cpu_Nres                  16: divisor<2>        29: spi_int<1> 
+  4: cpu_a<0>                  17: divisor<3>        30: spi_int<2> 
+  5: cpu_a<1>                  18: ece               31: spi_int<3> 
+  6: cpu_phi2                  19: extclk            32: spidatain<0> 
+  7: cpu_rnw                   20: ier               33: spidatain<1> 
+  8: cs1                       21: shiftcnt<0>       34: spidatain<2> 
+  9: divcnt<0>                 22: shiftdone         35: spidatain<3> 
+ 10: divcnt<1>                 23: shifting2         36: spidatain<4> 
+ 11: divcnt<2>                 24: slaveinten<0>     37: spidatain<5> 
+ 12: divcnt<3>                 25: slaveinten<1>     38: start_shifting 
+ 13: divcnt<3>/divcnt<3>_CLKF  26: slaveinten<2>     39: tc 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+divcnt<3>            ..X..X..XXXXX...XXX..................... 10
+divcnt<3>/divcnt<3>_CLKF 
+                     .....X...........XX..................... 3
+spidataout<6>        XXXXXXXX................................ 8
+spidatain<6>         ..X.....XXXXX.......X.X.............X... 9
+spidatain<5>         ..X.....XXXXX.......X.X............X.... 9
+cpu_Nirq             ...................X...XXXXXXXX.......X. 10
+spidatain<4>         ..X.....XXXXX.......X.X...........X..... 9
+spidatain<3>         ..X.....XXXXX.......X.X..........X...... 9
+spidatain<2>         ..X.....XXXXX.......X.X.........X....... 9
+spidatain<1>         ..X.....XXXXX.......X.X........X........ 9
+slaveinten<2>        XXXXXXXX................................ 8
+ier                  XXXXXXXX................................ 8
+divcnt<0>            ..X..X..XXXXXX...XX..................... 10
+shifting2            ........XXXXX........X...............X.. 7
+divcnt<1>            ..X..X..XXXXX.X..XX..................... 10
+divcnt<2>            ..X..X..XXXXX..X.XX..................... 10
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB2  ***********************************
+Number of function block inputs used/remaining:               37/17
+Number of signals used by logic mapping into function block:  37
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+spidataout<2>         3       0   \/1   1     FB2_1         (b)     (b)
+cpu_d<5>              6       1<-   0   0     FB2_2   29    I/O     I/O
+spidataout<1>         3       0     0   2     FB2_3         (b)     (b)
+spidataout<0>         3       0     0   2     FB2_4         (b)     (b)
+cpu_d<4>              5       0     0   0     FB2_5   30    I/O     I/O
+cpu_d<3>              5       0     0   0     FB2_6   31    I/O     I/O
+start_shifting        4       0     0   1     FB2_7         (b)     (b)
+cpu_d<2>              5       0     0   0     FB2_8   32    I/O     I/O
+cpu_d<1>              5       0     0   0     FB2_9   33    GSR/I/O I/O
+slaveinten<0>         4       0     0   1     FB2_10        (b)     (b)
+cpu_d<0>              5       0     0   0     FB2_11  34    GTS/I/O I/O
+frx                   4       0     0   1     FB2_12        (b)     (b)
+ece                   4       0     0   1     FB2_13        (b)     (b)
+divisor<2>            4       0     0   1     FB2_14  36    GTS/I/O I
+divisor<1>            4       0     0   1     FB2_15  37    I/O     I
+divisor<0>            4       0     0   1     FB2_16        (b)     (b)
+cpol                  4       0     0   1     FB2_17  38    I/O     I
+cpha                  4       0     0   1     FB2_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: cpu_d<4>.PIN      14: divisor<0>        26: spi_Nsel<3> 
+  2: cpu_d<2>.PIN      15: divisor<1>        27: spi_int<0> 
+  3: cpu_d<1>.PIN      16: divisor<2>        28: spi_int<1> 
+  4: cpu_d<0>.PIN      17: divisor<3>        29: spidatain<0> 
+  5: Ncs2              18: ece               30: spidatain<1> 
+  6: cpha              19: frx               31: spidatain<2> 
+  7: cpol              20: shifting2         32: spidatain<3> 
+  8: cpu_Nres          21: slaveinten<0>     33: spidatain<4> 
+  9: cpu_a<0>          22: slaveinten<1>     34: spidatain<5> 
+ 10: cpu_a<1>          23: spi_Nsel<0>       35: start_shifting 
+ 11: cpu_phi2          24: spi_Nsel<1>       36: start_shifting/start_shifting_RSTF__$INT 
+ 12: cpu_rnw           25: spi_Nsel<2>       37: tmo 
+ 13: cs1              
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+spidataout<2>        .X..X..XXXXXX........................... 8
+cpu_d<5>             ....X...XXXXX......X.X.....X.....XX..... 11
+spidataout<1>        ..X.X..XXXXXX........................... 8
+spidataout<0>        ...XX..XXXXXX........................... 8
+cpu_d<4>             ....X...XXXXX.....X.X.....X.....X....... 10
+cpu_d<3>             ....X...XXXXX...X........X.....X....X... 10
+start_shifting       ....X...XXXXX.....X...............XX.... 9
+cpu_d<2>             ....X...XXXXX..X.X......X.....X......... 10
+cpu_d<1>             ....X.X.XXXXX.X........X.....X.......... 10
+slaveinten<0>        X...X..XXXXXX........................... 8
+cpu_d<0>             ....XX..XXXXXX........X.....X........... 10
+frx                  X...X..XXXXXX........................... 8
+ece                  .X..X..XXXXXX........................... 8
+divisor<2>           .X..X..XXXXXX........................... 8
+divisor<1>           ..X.X..XXXXXX........................... 8
+divisor<0>           ...XX..XXXXXX........................... 8
+cpol                 ..X.X..XXXXXX........................... 8
+cpha                 ...XX..XXXXXX........................... 8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB3  ***********************************
+Number of function block inputs used/remaining:               13/41
+Number of signals used by logic mapping into function block:  13
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+(unused)              0       0     0   5     FB3_1         (b)     
+(unused)              0       0     0   5     FB3_2   5     I/O     
+(unused)              0       0     0   5     FB3_3         (b)     
+(unused)              0       0     0   5     FB3_4         (b)     
+(unused)              0       0     0   5     FB3_5   6     I/O     
+(unused)              0       0     0   5     FB3_6         (b)     
+(unused)              0       0     0   5     FB3_7         (b)     
+(unused)              0       0     0   5     FB3_8   7     I/O     I
+(unused)              0       0     0   5     FB3_9   8     I/O     I
+(unused)              0       0     0   5     FB3_10        (b)     
+spidataout<7>         3       0     0   2     FB3_11  12    I/O     I
+spidataout<5>         3       0     0   2     FB3_12        (b)     (b)
+spidataout<4>         3       0     0   2     FB3_13        (b)     (b)
+slaveinten<3>         4       0     0   1     FB3_14  13    I/O     I
+spi_Nsel<0>           4       0     0   1     FB3_15  14    I/O     O
+spi_Nsel<2>           4       0     0   1     FB3_16  18    I/O     O
+spi_Nsel<1>           4       0     0   1     FB3_17  16    I/O     O
+slaveinten<1>         4       0     0   1     FB3_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: cpu_d<7>.PIN       6: cpu_d<0>.PIN      10: cpu_a<1> 
+  2: cpu_d<5>.PIN       7: Ncs2              11: cpu_phi2 
+  3: cpu_d<4>.PIN       8: cpu_Nres          12: cpu_rnw 
+  4: cpu_d<2>.PIN       9: cpu_a<0>          13: cs1 
+  5: cpu_d<1>.PIN     
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+spidataout<7>        X.....XXXXXXX........................... 8
+spidataout<5>        .X....XXXXXXX........................... 8
+spidataout<4>        ..X...XXXXXXX........................... 8
+slaveinten<3>        X.....XXXXXXX........................... 8
+spi_Nsel<0>          .....XXXXXXXX........................... 8
+spi_Nsel<2>          ...X..XXXXXXX........................... 8
+spi_Nsel<1>          ....X.XXXXXXX........................... 8
+slaveinten<1>        .X....XXXXXXX........................... 8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*********************************** FB4  ***********************************
+Number of function block inputs used/remaining:               39/15
+Number of signals used by logic mapping into function block:  39
+Signal              Total   Imp   Exp Unused  Loc     Pin   Pin     Pin
+Name                Pt      Pt    Pt  Pt               #    Type    Use
+start_shifting/start_shifting_RSTF__$INT
+                      1       0     0   4     FB4_1         (b)     (b)
+spi_Nsel<3>           4       0     0   1     FB4_2   19    I/O     O
+tc                    3       0     0   2     FB4_3         (b)     (b)
+spidataout<3>         3       0     0   2     FB4_4         (b)     (b)
+shiftdone             3       0     0   2     FB4_5   20    I/O     I
+shiftcnt<0>           3       0     0   2     FB4_6         (b)     (b)
+tmo                   4       0   \/1   0     FB4_7         (b)     (b)
+spi_mosi             11       6<-   0   0     FB4_8   21    I/O     O
+(unused)              0       0   /\5   0     FB4_9         (b)     (b)
+spidatain<7>          4       0   \/1   0     FB4_10        (b)     (b)
+spi_sclk              6       1<-   0   0     FB4_11  22    I/O     O
+spidatain<0>          4       0     0   1     FB4_12        (b)     (b)
+shiftcnt<3>           4       0     0   1     FB4_13        (b)     (b)
+shiftcnt<2>           4       0     0   1     FB4_14  23    I/O     I
+cpu_d<7>              5       0     0   0     FB4_15  27    I/O     I/O
+shiftcnt<1>           4       0     0   1     FB4_16        (b)     (b)
+cpu_d<6>              5       0     0   0     FB4_17  28    I/O     I/O
+divisor<3>            4       0     0   1     FB4_18        (b)     (b)
+
+Signals Used by Logic in Function Block
+  1: cpu_d<3>.PIN      14: divcnt<3>                 27: spi_miso 
+  2: Ncs2              15: divcnt<3>/divcnt<3>_CLKF  28: spidatain<6> 
+  3: cpha              16: ier                       29: spidatain<7> 
+  4: cpol              17: shiftcnt<0>               30: spidataout<0> 
+  5: cpu_Nres          18: shiftcnt<1>               31: spidataout<1> 
+  6: cpu_a<0>          19: shiftcnt<2>               32: spidataout<2> 
+  7: cpu_a<1>          20: shiftcnt<3>               33: spidataout<3> 
+  8: cpu_phi2          21: shiftdone                 34: spidataout<4> 
+  9: cpu_rnw           22: shifting2                 35: spidataout<5> 
+ 10: cs1               23: slaveinten<2>             36: spidataout<6> 
+ 11: divcnt<0>         24: slaveinten<3>             37: spidataout<7> 
+ 12: divcnt<1>         25: spi_int<2>                38: tc 
+ 13: divcnt<2>         26: spi_int<3>                39: tmo 
+
+Signal                        1         2         3         4 FB
+Name                0----+----0----+----0----+----0----+----0 Inputs
+start_shifting/start_shifting_RSTF__$INT 
+                     ....X...............X................... 2
+spi_Nsel<3>          XX..XXXXXX.............................. 8
+tc                   .X...XXX.X..........X................... 6
+spidataout<3>        XX..XXXXXX.............................. 8
+shiftdone            ....X.....XXXXX.XXXX.................... 10
+shiftcnt<0>          ....X.....XXXXX.X....X.................. 8
+tmo                  XX..XXXXXX.............................. 8
+spi_mosi             ....X.....XXXXX..XXXXX.......XXXXXXXX.X. 20
+spidatain<7>         ....X.....XXXXX.X....X.....X............ 9
+spi_sclk             ..XXX.....XXXXX.X...XX.................. 11
+spidatain<0>         ....X.....XXXXX.X....X....X............. 9
+shiftcnt<3>          ....X.....XXXXX.XXXX.X.................. 11
+shiftcnt<2>          ....X.....XXXXX.XXX..X.................. 10
+cpu_d<7>             .X...XXXXX.............X.X..X........X.. 10
+shiftcnt<1>          ....X.....XXXXX.XX...X.................. 9
+cpu_d<6>             .X...XXXXX.....X......X.X..X............ 10
+divisor<3>           XX..XXXXXX.............................. 8
+                    0----+----1----+----2----+----3----+----4
+                              0         0         0         0
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+
+
+
+
+
+
+FDCPE_cpha: FDCPE port map (cpha,cpu_d(0).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',cpha_CE);
+cpha_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_cpol: FDCPE port map (cpol,cpu_d(1).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',cpol_CE);
+cpol_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+
+cpu_Nirq <= NOT (((ier AND tc)
+	OR (slaveinten(0) AND NOT spi_int(0))
+	OR (slaveinten(1) AND NOT spi_int(1))
+	OR (slaveinten(2) AND NOT spi_int(2))
+	OR (slaveinten(3) AND NOT spi_int(3))));
+
+
+cpu_d_I(0) <= ((cpu_phi2 AND spi_Nsel(0) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpha AND cpu_rnw AND NOT cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND divisor(0) AND cpu_rnw AND cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(0) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2));
+cpu_d(0) <= cpu_d_I(0) when cpu_d_OE(0) = '1' else 'Z';
+cpu_d_OE(0) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(1) <= ((cpu_phi2 AND spi_Nsel(1) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpol AND cpu_rnw AND NOT cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND divisor(1) AND cpu_rnw AND cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(1) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2));
+cpu_d(1) <= cpu_d_I(1) when cpu_d_OE(1) = '1' else 'Z';
+cpu_d_OE(1) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(2) <= ((cpu_phi2 AND spi_Nsel(2) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND ece AND cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND 
+	cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND divisor(2) AND cpu_rnw AND cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(2) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2));
+cpu_d(2) <= cpu_d_I(2) when cpu_d_OE(2) = '1' else 'Z';
+cpu_d_OE(2) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(3) <= ((cpu_phi2 AND spi_Nsel(3) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND divisor(3) AND cpu_rnw AND cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(3) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND tmo AND cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND 
+	cs1 AND NOT Ncs2));
+cpu_d(3) <= cpu_d_I(3) when cpu_d_OE(3) = '1' else 'Z';
+cpu_d_OE(3) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(4) <= ((cpu_phi2 AND frx AND cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND 
+	cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND slaveinten(0) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(4) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2 AND NOT spi_int(0)));
+cpu_d(4) <= cpu_d_I(4) when cpu_d_OE(4) = '1' else 'Z';
+cpu_d_OE(4) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(5) <= ((cpu_phi2 AND cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2 AND NOT spi_int(1))
+	OR (cpu_phi2 AND slaveinten(1) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(5) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpu_rnw AND NOT cpu_a(1) AND start_shifting AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND 
+	shifting2 AND cs1 AND NOT Ncs2));
+cpu_d(5) <= cpu_d_I(5) when cpu_d_OE(5) = '1' else 'Z';
+cpu_d_OE(5) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(6) <= ((cpu_phi2 AND ier AND cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND 
+	cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND slaveinten(2) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(6) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2 AND NOT spi_int(2)));
+cpu_d(6) <= cpu_d_I(6) when cpu_d_OE(6) = '1' else 'Z';
+cpu_d_OE(6) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+
+cpu_d_I(7) <= ((cpu_phi2 AND slaveinten(3) AND cpu_rnw AND cpu_a(1) AND 
+	cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND spidatain(7) AND cpu_rnw AND NOT cpu_a(1) AND 
+	NOT cpu_a(0) AND cs1 AND NOT Ncs2)
+	OR (cpu_phi2 AND cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2 AND NOT spi_int(3))
+	OR (cpu_phi2 AND cpu_rnw AND NOT cpu_a(1) AND tc AND cpu_a(0) AND 
+	cs1 AND NOT Ncs2));
+cpu_d(7) <= cpu_d_I(7) when cpu_d_OE(7) = '1' else 'Z';
+cpu_d_OE(7) <= (cpu_phi2 AND cpu_rnw AND cs1 AND NOT Ncs2);
+
+FDCPE_divcnt0: FDCPE port map (divcnt(0),divcnt_D(0),divcnt(3)/divcnt(3)_CLKF,divcnt_CLR(0),divcnt_PRE(0));
+divcnt_D(0) <= ((NOT divcnt(1) AND NOT divcnt(2) AND ece AND NOT divcnt(3) AND 
+	NOT divisor(0) AND extclk)
+	OR (cpu_phi2 AND NOT divcnt(1) AND NOT divcnt(2) AND NOT ece AND 
+	NOT divcnt(3) AND NOT divisor(0))
+	OR (cpu_Nres AND divcnt(0))
+	OR (NOT cpu_Nres AND NOT divisor(0)));
+divcnt_CLR(0) <= (NOT cpu_Nres AND NOT divisor(0));
+divcnt_PRE(0) <= (NOT cpu_Nres AND divisor(0));
+
+FDCPE_divcnt1: FDCPE port map (divcnt(1),divcnt_D(1),divcnt(3)/divcnt(3)_CLKF,divcnt_CLR(1),divcnt_PRE(1));
+divcnt_D(1) <= ((cpu_Nres AND divcnt(0) AND NOT divcnt(1))
+	OR (cpu_phi2 AND NOT divcnt(0) AND NOT divcnt(2) AND NOT ece AND 
+	NOT divcnt(3) AND NOT divisor(1))
+	OR (NOT divcnt(0) AND NOT divcnt(2) AND ece AND NOT divcnt(3) AND 
+	NOT divisor(1) AND extclk)
+	OR (NOT cpu_Nres AND NOT divisor(1))
+	OR (cpu_Nres AND NOT divcnt(0) AND divcnt(1)));
+divcnt_CLR(1) <= (NOT cpu_Nres AND NOT divisor(1));
+divcnt_PRE(1) <= (NOT cpu_Nres AND divisor(1));
+
+FDCPE_divcnt2: FDCPE port map (divcnt(2),divcnt_D(2),divcnt(3)/divcnt(3)_CLKF,divcnt_CLR(2),divcnt_PRE(2));
+divcnt_D(2) <= ((cpu_Nres AND divcnt(1) AND NOT divcnt(2))
+	OR (cpu_Nres AND NOT divcnt(0) AND NOT divcnt(1) AND divcnt(2))
+	OR (cpu_phi2 AND NOT divcnt(2) AND NOT ece AND NOT divcnt(3) AND 
+	NOT divisor(2))
+	OR (NOT divcnt(2) AND ece AND NOT divcnt(3) AND NOT divisor(2) AND 
+	extclk)
+	OR (NOT cpu_Nres AND NOT divisor(2))
+	OR (cpu_Nres AND divcnt(0) AND NOT divcnt(2)));
+divcnt_CLR(2) <= (NOT cpu_Nres AND NOT divisor(2));
+divcnt_PRE(2) <= (NOT cpu_Nres AND divisor(2));
+
+
+divcnt(3)/divcnt(3)_CLKF <= ((NOT cpu_phi2 AND NOT ece)
+	OR (ece AND NOT extclk));
+
+FTCPE_divcnt3: FTCPE port map (divcnt(3),divcnt_T(3),divcnt(3)/divcnt(3)_CLKF,divcnt_CLR(3),divcnt_PRE(3));
+divcnt_T(3) <= ((cpu_Nres AND NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND 
+	divcnt(3))
+	OR (cpu_Nres AND NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND 
+	divisor(3))
+	OR (cpu_Nres AND NOT cpu_phi2 AND NOT divcnt(0) AND NOT divcnt(1) AND 
+	NOT divcnt(2) AND NOT ece)
+	OR (cpu_Nres AND NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND 
+	ece AND NOT extclk)
+	OR (NOT cpu_Nres AND divcnt(3) AND NOT divisor(3))
+	OR (NOT cpu_Nres AND NOT divcnt(3) AND divisor(3)));
+divcnt_CLR(3) <= (NOT cpu_Nres AND NOT divisor(3));
+divcnt_PRE(3) <= (NOT cpu_Nres AND divisor(3));
+
+FDCPE_divisor0: FDCPE port map (divisor(0),cpu_d(0).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',divisor_CE(0));
+divisor_CE(0) <= (NOT cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_divisor1: FDCPE port map (divisor(1),cpu_d(1).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',divisor_CE(1));
+divisor_CE(1) <= (NOT cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_divisor2: FDCPE port map (divisor(2),cpu_d(2).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',divisor_CE(2));
+divisor_CE(2) <= (NOT cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_divisor3: FDCPE port map (divisor(3),cpu_d(3).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',divisor_CE(3));
+divisor_CE(3) <= (NOT cpu_rnw AND cpu_a(1) AND NOT cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_ece: FDCPE port map (ece,cpu_d(2).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',ece_CE);
+ece_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_frx: FDCPE port map (frx,cpu_d(4).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',frx_CE);
+frx_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_ier: FDCPE port map (ier,cpu_d(6).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',ier_CE);
+ier_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_shiftcnt0: FDCPE port map (shiftcnt(0),shiftcnt_D(0),shiftcnt_C(0),NOT cpu_Nres,'0');
+shiftcnt_D(0) <= (NOT shiftcnt(0) AND shifting2);
+shiftcnt_C(0) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FDCPE_shiftcnt1: FDCPE port map (shiftcnt(1),shiftcnt_D(1),shiftcnt_C(1),NOT cpu_Nres,'0');
+shiftcnt_D(1) <= ((shiftcnt(0) AND NOT shiftcnt(1) AND shifting2)
+	OR (NOT shiftcnt(0) AND shiftcnt(1) AND shifting2));
+shiftcnt_C(1) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FTCPE_shiftcnt2: FTCPE port map (shiftcnt(2),shiftcnt_T(2),shiftcnt_C(2),NOT cpu_Nres,'0');
+shiftcnt_T(2) <= ((shiftcnt(2) AND NOT shifting2)
+	OR (shiftcnt(0) AND shiftcnt(1) AND shifting2));
+shiftcnt_C(2) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FTCPE_shiftcnt3: FTCPE port map (shiftcnt(3),shiftcnt_T(3),shiftcnt_C(3),NOT cpu_Nres,'0');
+shiftcnt_T(3) <= ((shiftcnt(3) AND NOT shifting2)
+	OR (shiftcnt(2) AND shiftcnt(0) AND shiftcnt(1) AND 
+	shifting2));
+shiftcnt_C(3) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FDCPE_shiftdone: FDCPE port map (shiftdone,shiftdone_D,shiftdone_C,NOT cpu_Nres,'0');
+shiftdone_D <= (shiftcnt(3) AND shiftcnt(2) AND shiftcnt(0) AND 
+	shiftcnt(1));
+shiftdone_C <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FDCPE_shifting2: FDCPE port map (shifting2,shifting2_D,shifting2_C,'0','0');
+shifting2_D <= (NOT shiftdone AND start_shifting);
+shifting2_C <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+
+FDCPE_slaveinten0: FDCPE port map (slaveinten(0),cpu_d(4).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',slaveinten_CE(0));
+slaveinten_CE(0) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_slaveinten1: FDCPE port map (slaveinten(1),cpu_d(5).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',slaveinten_CE(1));
+slaveinten_CE(1) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_slaveinten2: FDCPE port map (slaveinten(2),cpu_d(6).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',slaveinten_CE(2));
+slaveinten_CE(2) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_slaveinten3: FDCPE port map (slaveinten(3),cpu_d(7).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',slaveinten_CE(3));
+slaveinten_CE(3) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_spi_Nsel0: FDCPE port map (spi_Nsel(0),cpu_d(0).PIN,NOT cpu_phi2,'0',NOT cpu_Nres,spi_Nsel_CE(0));
+spi_Nsel_CE(0) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_spi_Nsel1: FDCPE port map (spi_Nsel(1),cpu_d(1).PIN,NOT cpu_phi2,'0',NOT cpu_Nres,spi_Nsel_CE(1));
+spi_Nsel_CE(1) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_spi_Nsel2: FDCPE port map (spi_Nsel(2),cpu_d(2).PIN,NOT cpu_phi2,'0',NOT cpu_Nres,spi_Nsel_CE(2));
+spi_Nsel_CE(2) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_spi_Nsel3: FDCPE port map (spi_Nsel(3),cpu_d(3).PIN,NOT cpu_phi2,'0',NOT cpu_Nres,spi_Nsel_CE(3));
+spi_Nsel_CE(3) <= (NOT cpu_rnw AND cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_spi_mosi: FDCPE port map (spi_mosi_I,spi_mosi,spi_mosi_C,'0',NOT cpu_Nres);
+spi_mosi <= ((shiftcnt(3) AND shiftcnt(2) AND shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(0) AND shifting2)
+	OR (shiftcnt(3) AND shiftcnt(2) AND NOT shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(1) AND shifting2)
+	OR (shiftcnt(3) AND NOT shiftcnt(2) AND NOT shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(3) AND shifting2)
+	OR (NOT shiftcnt(3) AND shiftcnt(2) AND shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(4) AND shifting2)
+	OR (NOT shiftcnt(3) AND shiftcnt(2) AND NOT shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(5) AND shifting2)
+	OR (NOT shiftcnt(3) AND NOT shiftcnt(2) AND NOT shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(7) AND shifting2)
+	OR (shiftcnt(3) AND NOT shiftcnt(2) AND shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(2) AND shifting2)
+	OR (NOT shiftcnt(3) AND NOT shiftcnt(2) AND shiftcnt(1) AND 
+	NOT shiftdone AND NOT spidataout(6) AND shifting2));
+spi_mosi_C <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spi_mosi <= spi_mosi_I when spi_mosi_OE = '1' else 'Z';
+spi_mosi_OE <= NOT tmo;
+
+FDCPE_spi_sclk: FDCPE port map (spi_sclk,spi_sclk_D,spi_sclk_C,spi_sclk_CLR,spi_sclk_PRE);
+spi_sclk_D <= cpol
+	 XOR 
+spi_sclk_D <= ((cpu_Nres AND cpha AND NOT shiftcnt(0) AND NOT shiftdone AND 
+	shifting2)
+	OR (cpu_Nres AND NOT cpha AND shiftcnt(0) AND NOT shiftdone AND 
+	shifting2));
+spi_sclk_C <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spi_sclk_CLR <= (NOT cpu_Nres AND NOT cpol);
+spi_sclk_PRE <= (NOT cpu_Nres AND cpol);
+
+FDCPE_spidatain0: FDCPE port map (spidatain(0),spi_miso,spidatain_C(0),NOT cpu_Nres,'0',spidatain_CE(0));
+spidatain_C(0) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(0) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain1: FDCPE port map (spidatain(1),spidatain(0),spidatain_C(1),NOT cpu_Nres,'0',spidatain_CE(1));
+spidatain_C(1) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(1) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain2: FDCPE port map (spidatain(2),spidatain(1),spidatain_C(2),NOT cpu_Nres,'0',spidatain_CE(2));
+spidatain_C(2) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(2) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain3: FDCPE port map (spidatain(3),spidatain(2),spidatain_C(3),NOT cpu_Nres,'0',spidatain_CE(3));
+spidatain_C(3) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(3) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain4: FDCPE port map (spidatain(4),spidatain(3),spidatain_C(4),NOT cpu_Nres,'0',spidatain_CE(4));
+spidatain_C(4) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(4) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain5: FDCPE port map (spidatain(5),spidatain(4),spidatain_C(5),NOT cpu_Nres,'0',spidatain_CE(5));
+spidatain_C(5) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(5) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain6: FDCPE port map (spidatain(6),spidatain(5),spidatain_C(6),NOT cpu_Nres,'0',spidatain_CE(6));
+spidatain_C(6) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(6) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidatain7: FDCPE port map (spidatain(7),spidatain(6),spidatain_C(7),NOT cpu_Nres,'0',spidatain_CE(7));
+spidatain_C(7) <= (NOT divcnt(0) AND NOT divcnt(1) AND NOT divcnt(2) AND NOT divcnt(3) AND 
+	NOT divcnt(3)/divcnt(3)_CLKF);
+spidatain_CE(7) <= (shiftcnt(0) AND shifting2);
+
+FDCPE_spidataout0: FDCPE port map (spidataout(0),cpu_d(0).PIN,NOT cpu_phi2,'0','0',spidataout_CE(0));
+spidataout_CE(0) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout1: FDCPE port map (spidataout(1),cpu_d(1).PIN,NOT cpu_phi2,'0','0',spidataout_CE(1));
+spidataout_CE(1) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout2: FDCPE port map (spidataout(2),cpu_d(2).PIN,NOT cpu_phi2,'0','0',spidataout_CE(2));
+spidataout_CE(2) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout3: FDCPE port map (spidataout(3),cpu_d(3).PIN,NOT cpu_phi2,'0','0',spidataout_CE(3));
+spidataout_CE(3) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout4: FDCPE port map (spidataout(4),cpu_d(4).PIN,NOT cpu_phi2,'0','0',spidataout_CE(4));
+spidataout_CE(4) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout5: FDCPE port map (spidataout(5),cpu_d(5).PIN,NOT cpu_phi2,'0','0',spidataout_CE(5));
+spidataout_CE(5) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout6: FDCPE port map (spidataout(6),cpu_d(6).PIN,NOT cpu_phi2,'0','0',spidataout_CE(6));
+spidataout_CE(6) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FDCPE_spidataout7: FDCPE port map (spidataout(7),cpu_d(7).PIN,NOT cpu_phi2,'0','0',spidataout_CE(7));
+spidataout_CE(7) <= (cpu_Nres AND NOT cpu_rnw AND NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND 
+	NOT Ncs2);
+
+FTCPE_start_shifting: FTCPE port map (start_shifting,start_shifting_T,cpu_phi2,NOT start_shifting/start_shifting_RSTF__$INT,'0');
+start_shifting_T <= ((frx AND NOT cpu_a(1) AND NOT start_shifting AND NOT cpu_a(0) AND 
+	cs1 AND NOT Ncs2)
+	OR (NOT cpu_rnw AND NOT cpu_a(1) AND NOT start_shifting AND NOT cpu_a(0) AND 
+	cs1 AND NOT Ncs2));
+
+
+start_shifting/start_shifting_RSTF__$INT <= (cpu_Nres AND NOT shiftdone);
+
+FDCPE_tc: FDCPE port map (tc,'0',cpu_phi2,'0',shiftdone,tc_CE);
+tc_CE <= (NOT cpu_a(1) AND NOT cpu_a(0) AND cs1 AND NOT Ncs2);
+
+FDCPE_tmo: FDCPE port map (tmo,cpu_d(3).PIN,NOT cpu_phi2,NOT cpu_Nres,'0',tmo_CE);
+tmo_CE <= (NOT cpu_rnw AND NOT cpu_a(1) AND cpu_a(0) AND cs1 AND NOT Ncs2);
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC9572XL-7-VQ44
+
+
+   --------------------------------  
+  /44 43 42 41 40 39 38 37 36 35 34 \
+ | 1                             33 | 
+ | 2                             32 | 
+ | 3                             31 | 
+ | 4                             30 | 
+ | 5         XC9572XL-7-VQ44     29 | 
+ | 6                             28 | 
+ | 7                             27 | 
+ | 8                             26 | 
+ | 9                             25 | 
+ | 10                            24 | 
+ | 11                            23 | 
+ \ 12 13 14 15 16 17 18 19 20 21 22 /
+   --------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 KPR                              23 cpu_phi2                      
+  2 KPR                              24 TDO                           
+  3 KPR                              25 GND                           
+  4 GND                              26 VCC                           
+  5 KPR                              27 cpu_d<7>                      
+  6 KPR                              28 cpu_d<6>                      
+  7 spi_int<0>                       29 cpu_d<5>                      
+  8 spi_int<1>                       30 cpu_d<4>                      
+  9 TDI                              31 cpu_d<3>                      
+ 10 TMS                              32 cpu_d<2>                      
+ 11 TCK                              33 cpu_d<1>                      
+ 12 spi_int<2>                       34 cpu_d<0>                      
+ 13 spi_int<3>                       35 VCC                           
+ 14 spi_Nsel<0>                      36 cpu_rnw                       
+ 15 VCC                              37 cpu_a<1>                      
+ 16 spi_Nsel<1>                      38 cpu_a<0>                      
+ 17 GND                              39 cs1                           
+ 18 spi_Nsel<2>                      40 Ncs2                          
+ 19 spi_Nsel<3>                      41 cpu_Nirq                      
+ 20 spi_miso                         42 extclk                        
+ 21 spi_mosi                         43 KPR                           
+ 22 spi_sclk                         44 cpu_Nres                      
+
+
+Legend :  NC  = Not Connected, unbonded pin
+         PGND = Unused I/O configured as additional Ground pin
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         VCC  = Dedicated Power Pin
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc9572xl-7-VQ44
+Optimization Method                         : SPEED
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Power Mode                                  : STD
+Ground on Unused IOs                        : OFF
+Set I/O Pin Termination                     : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Input Limit                                 : 54
+Pterm Limit                                 : 25
